@@ -3,8 +3,8 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewRightSideConstraint: NSLayoutConstraint!
     
     // MARK: Variables
@@ -64,7 +64,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate  {
             cell.leftLabel.text = "Row \(indexPath.row) with some super short text"
         }
         else if indexPath.row % 3 == 1 {
-            cell.leftLabel.text = "Row \(indexPath.row) with some super long text that nobody can read because it is so very very long"
+            cell.leftLabel.text = "Row \(indexPath.row) with some super long text that nobody can read because it is so very long"
         }
         else {
             cell.leftLabel.text = "Row \(indexPath.row) with some super long text that nobody can read because it is so very very very very very very very long"
