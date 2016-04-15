@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="250" minValue="0.0" maxValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="IeH-6j-itl">
-                                <rect key="frame" x="34" y="36" width="532" height="31"/>
+                                <rect key="frame" x="-2" y="36" width="604" height="31"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0gy-Js-mKz"/>
                                 </connections>
@@ -32,17 +32,17 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oUq-0I-ggI" id="Pai-k9-1vy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hh-6t-lh5">
-                                                    <rect key="frame" x="548" y="16" width="35.5" height="31.5"/>
+                                                    <rect key="frame" x="548" y="16" width="36" height="32"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS4-s0-SOU">
-                                                    <rect key="frame" x="16" y="16" width="42" height="31.5"/>
+                                                    <rect key="frame" x="16" y="16" width="42" height="32"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -71,9 +71,9 @@
                         <constraints>
                             <constraint firstItem="6jF-tO-jo4" firstAttribute="top" secondItem="IeH-6j-itl" secondAttribute="bottom" constant="16" id="50D-sT-Hzv"/>
                             <constraint firstItem="6jF-tO-jo4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5fe-AC-xEt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IeH-6j-itl" secondAttribute="trailing" constant="16" id="6RY-Zd-4X2"/>
+                            <constraint firstAttribute="trailing" secondItem="IeH-6j-itl" secondAttribute="trailing" id="6RY-Zd-4X2"/>
                             <constraint firstItem="IeH-6j-itl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Q8X-kP-yeP"/>
-                            <constraint firstItem="IeH-6j-itl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="Qbx-cJ-BdV"/>
+                            <constraint firstItem="IeH-6j-itl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qbx-cJ-BdV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6jF-tO-jo4" secondAttribute="bottom" id="SAA-sR-Cef"/>
                             <constraint firstAttribute="trailing" secondItem="6jF-tO-jo4" secondAttribute="trailing" id="t47-Ck-avC"/>
                         </constraints>
