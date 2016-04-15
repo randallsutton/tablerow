@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         self.sliderNeedsUpdate = true
     }
     
-    
     // MARK: UISlider
     
     @IBAction func sliderValueChanged(sender: UISlider) {
