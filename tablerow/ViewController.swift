@@ -1,9 +1,18 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
+    // MARK: Outlets
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var tableViewRightSideConstraint: NSLayoutConstraint!
+    
+    // MARK: Variables
+    
+    var sliderMaxValue: Float = 0.0
+    var sliderNeedsUpdate = true
+    
+    // MARK: UIView
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,12 +21,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         
         self.tableView.estimatedRowHeight = 44.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
+        if self.sliderNeedsUpdate {
+            // Setup the slider values
+            self.sliderMaxValue = Float(self.tableView.frame.width)
+            self.slider.maximumValue = self.sliderMaxValue
+            self.slider.value = self.sliderMaxValue
+            
+            // Finish the update
+            self.sliderNeedsUpdate = false
+        }
+    }
+    
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        // Reset the constraint
+        self.tableViewRightSideConstraint.constant = 0
+        
+        // Let the slider know it needs to update
+        self.sliderNeedsUpdate = true
+    }
+    
+    
+    // MARK: UISlider
+    
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        self.tableViewRightSideConstraint.constant = CGFloat(self.sliderMaxValue) - CGFloat(self.slider.value)
+    }
+}
+
+// MARK: UITableView
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as! CustomCell
-
+        
         if indexPath.row % 3 == 0 {
             cell.leftLabel.text = "Row \(indexPath.row) with some super short text"
         }
@@ -35,20 +77,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.rightLabel.text = "Right Large"
         }
         
-
         return cell
     }
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
-    }
-    
-    @IBAction func sliderValueChanged(sender: UISlider) {
-        self.tableViewRightSideConstraint.constant = 250.0 - CGFloat(self.slider.value)
     }
 }
 
